@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
+    public bool canOpen = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(canOpen)
         {
             GetComponent<Animator>().enabled = true;
         }
